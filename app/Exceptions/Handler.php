@@ -4,9 +4,15 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Routing\Route;
+use App\Http\Traits\ApiResponseTrait;
 
 class Handler extends ExceptionHandler
 {
+    use ApiResponseTrait;
     /**
      * A list of the exception types that are not reported.
      *
@@ -50,6 +56,24 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof NotFoundHttpException) {
+            $this->status = $this->status404;
+            $this->message = 'The requested URL could not be found';
+            return $this->sendResponse();
+        }
+
+        if ($exception instanceof ModelNotFoundException) {
+            $this->status = $this->status404;
+            $this->message = 'The requested Model could not be found';
+            return $this->sendResponse();
+        }
+
+        if ($exception instanceof MethodNotAllowedHttpException) {
+            $this->status = $this->status404;
+            $this->message = 'The requested route could not be found';
+            return $this->sendResponse();
+        }
+
         return parent::render($request, $exception);
     }
 }
