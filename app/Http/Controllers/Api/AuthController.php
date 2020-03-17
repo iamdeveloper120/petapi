@@ -21,6 +21,7 @@ class AuthController extends Controller
     public function login(){
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
+            $success['userData'] = $user;
             $success['token'] =  $user->createToken('MyApp')->accessToken;
             $this->data = $success;
             return $this->sendResponse();
@@ -77,7 +78,10 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        Passport::tokensExpireIn(Carbon::now());
+        $user = Auth::user();
+        foreach ($user->tokens as $token) {
+            $token->revoke();
+        }
         $this->message = 'You have been succesfully logged out!';
         $this->status = $this->status200;
         return $this->sendResponse();
