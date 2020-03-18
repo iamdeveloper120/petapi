@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Http\Traits\ApiResponseTrait;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -89,7 +91,16 @@ class PostController extends Controller
     }
 
     public function uploadFeatureImage(Request $request) {
-        $this->data = $request->all();
+        if($request->file->getClientOriginalName()) {
+            $path = public_path().'/storage/images/';
+            File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+            $file = $request->file->getClientOriginalName();
+            $request->file->move($path, $file);
+            $this->data['url'] = $path.$file;
+            $this->message = 'File uploaded successfully';
+            return $this->sendResponse();
+        }
+        $this->message = 'Error uploading file';
         return $this->sendResponse();
     }
 }

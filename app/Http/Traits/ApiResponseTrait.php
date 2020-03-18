@@ -117,15 +117,17 @@ trait ApiResponseTrait {
      */
     protected $status501 = 501;
 
+    protected $response = 1;
     protected $status = 200;
     protected $message = 'success';
     protected $data = null;
-    protected $response = array();
+    protected $send = array();
 
     public function sendResponse() {
-        $this->response['status'] = $this->status;
-        $this->response['message'] = $this->message;
-        $this->response['data'] = $this->data;
-        return response()->json($this->response, $this->status);
+        $this->send['response'] = $this->response;
+        $this->send['status'] = $this->status;
+        $this->send['message'] = $this->message;
+        $this->send['data'] = $this->data;
+        return response()->json($this->send, $this->status);
     }
 }
