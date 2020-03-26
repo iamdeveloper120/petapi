@@ -1,12 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Tag;
 use Illuminate\Http\Request;
+use App\Http\Traits\ApiResponseTrait;
+use Illuminate\Support\Facades\DB;
 
 class TagController extends Controller
 {
+    use ApiResponseTrait;
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,9 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tags = Tag::all();
+        $this->data = $tags;
+        return $this->sendResponse();
     }
 
     /**

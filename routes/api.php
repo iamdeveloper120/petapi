@@ -23,7 +23,8 @@ Route::middleware(['auth:api'])->group(function(){
     Route::apiResources([
         'roles' => 'Api\RoleController',
         'users' => 'Api\UserController',
-        'posts' => 'Api\PostController'
+        'posts' => 'Api\PostController',
+        'tags' => 'Api\TagController'
     ]);
 
     Route::post('details', 'Api\AuthController@details');
