@@ -30,3 +30,11 @@ Route::middleware(['auth:api'])->group(function(){
     Route::post('details', 'Api\AuthController@details');
     Route::post('logout', 'Api\AuthController@logout');
 });
+
+/**
+ * Api routes for guidance pet blog
+ */
+
+Route::apiResources([
+    'tags' => 'Api\TagController',
+]);
