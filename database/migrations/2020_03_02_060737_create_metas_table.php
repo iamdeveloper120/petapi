@@ -16,7 +16,7 @@ class CreateMetasTable extends Migration
         Schema::create('metas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('meta_key');
-            $table->json('meta_value');
+            $table->string('meta_value');
             $table->integer('status')->comment('1:active, :inactive')->default('1');
             $table->timestamps();
         });
