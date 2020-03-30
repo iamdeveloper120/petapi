@@ -1,4 +1,4 @@
-<p align="center"><img src="https://www.tapedaily.com/wp-content/uploads/2019/02/td-logo-edited-rz.png"></p>
+<p align="center"><img src="http://dev.guidance.pet/assets/images/logo-text.png"></p>
 
 [![Build Status](https://img.shields.io/travis/gothinkster/laravel-realworld-example-app/master.svg)](https://travis-ci.org/gothinkster/laravel-realworld-example-app) [![Gitter](https://img.shields.io/gitter/room/realworld-dev/laravel.svg)](https://gitter.im/realworld-dev/laravel) [![GitHub stars](https://img.shields.io/github/stars/gothinkster/laravel-realworld-example-app.svg)](https://github.com/gothinkster/laravel-realworld-example-app/stargazers) [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
 
@@ -12,16 +12,13 @@ This repo is functionality In-Progress — PRs and issues welcome!
 
 ## Installation
 
-Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
-
-
 Clone the repository
 
-    git clone git@github.com:tapedailyfarhan/guidancepet.git
+    git clone git@github.com:tapedailyfarhan/guidancepetapi.git
 
 Switch to the repo folder
 
-    cd guidancepet
+    cd guidancepetapi
 
 Install all the dependencies using composer
 
@@ -35,14 +32,14 @@ Generate a new application key
 
     php artisan key:generate
 
-Generate a new JWT authentication secret key
-
-    php artisan jwt:generate
-
 Run the database migrations (**Set the database connection in .env before migrating**)
 
     php artisan migrate
 
+Run the database seeder
+
+    php artisan db:seed
+    
 Start the local development server
 
     php artisan serve
@@ -51,25 +48,25 @@ You can now access the server at http://localhost:8000
 
 **TL;DR command list**
 
-    git@github.com:tapedailyfarhan/guidancepet.git
-    cd guidancepet
+    git@github.com:tapedailyfarhan/guidancepetapi.git
+    cd guidancepetapi
     composer install
     cp .env.example .env
     php artisan key:generate
-    php artisan jwt:generate 
     
 **Make sure you set the correct database connection information before running the migrations** [Environment variables](#environment-variables)
 
     php artisan migrate
+    php artisan db:seed
     php artisan serve
 
 ## Database seeding
 
 **Populate the database with seed data with relationships which includes users, articles, comments, tags, favorites and follows. This can help you to quickly start testing the api or couple a frontend and start using it with ready content.**
 
-Open the DummyDataSeeder and set the property values as per your requirement
+Open the Seeder and set the property values as per your requirement
 
-    database/seeds/DummyDataSeeder.php
+    database/seeds/*
 
 Run the database seeder and you're done
 
@@ -83,7 +80,7 @@ Run the database seeder and you're done
 
 This application adheres to the api specifications set by the [Guidancepet](https://github.com/tapedailyfarhan/guidancepet) team. This helps mix and match any backend with any other frontend without conflicts.
 
-> [Full API Spec](https://github.com/tapedailyfarhan/guidancepet)
+> [Full API Spec](https://github.com/tapedailyfarhan/guidancepetapi)
 
 More information regarding the project can be found here https://github.com/tapedailyfarhan/guidancepet
 
@@ -102,12 +99,6 @@ More information regarding the project can be found here https://github.com/tape
 - `app/Http/Controllers/Api` - Contains all the api controllers
 - `app/Http/Middleware` - Contains the JWT auth middleware
 - `app/Http/Requests/Api` - Contains all the api form requests
-- `app/RealWorld/Favorite` - Contains the files implementing the favorite feature
-- `app/RealWorld/Filters` - Contains the query filters used for filtering api requests
-- `app/RealWorld/Follow` - Contains the files implementing the follow feature
-- `app/RealWorld/Paginate` - Contains the pagination class used to paginate the result
-- `app/RealWorld/Slug` - Contains the files implementing slugs to articles
-- `app/RealWorld/Transformers` - Contains all the data transformers
 - `config` - Contains all the application configuration files
 - `database/factories` - Contains the model factory for all the models
 - `database/migrations` - Contains all the database migrations
