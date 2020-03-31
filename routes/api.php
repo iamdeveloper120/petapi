@@ -37,4 +37,5 @@ Route::middleware(['auth:api'])->group(function(){
 
 Route::apiResources([
     'tags' => 'Api\TagController',
+    'categories' => 'Api\CategoryController',
 ]);
