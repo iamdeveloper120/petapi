@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login', 'Api\UserController@login');
-Route::post('register', 'Api\UserController@register');
+Route::post('login', 'Api\AuthController@login')->name('login');
+Route::post('register', 'Api\AuthController@register');
 
-Route::group(['middleware' => 'auth:api'], function(){
-    Route::post('details', 'Api\UserController@details');
+Route::middleware(['auth:api'])->group(function(){
+    /* specify all resource's custom methods before you register the resource*/
+    Route::post('uploadImage', 'Api\PostController@uploadFeatureImage');
+
+    Route::apiResources([
+        'roles' => 'Api\RoleController',
+        'users' => 'Api\UserController',
+        'posts' => 'Api\PostController',
+        'tags' => 'Api\TagController'
+    ]);
+
+    Route::post('details', 'Api\AuthController@details');
+    Route::post('logout', 'Api\AuthController@logout');
 });
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+/**
+ * Api routes for guidance pet blog
+ */
+
+Route::apiResources([
+    'tags' => 'Api\TagController',
+    'categories' => 'Api\CategoryController',
+]);

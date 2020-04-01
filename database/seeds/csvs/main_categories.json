@@ -1,0 +1,112 @@
+[
+    {
+        "user_id": 0,
+        "parent_id": 1,
+        "title": "Cat Food Types"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 1,
+        "title": "Cat Nutrition"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 1,
+        "title": "Cat Treats"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 2,
+        "title": "Cat Common Symptoms"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 2,
+        "title": "Cat Diseases & Illness"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 2,
+        "title": "Cat Allergies"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 2,
+        "title": "Cat Veterinary Tips"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 2,
+        "title": "Cat Vaccinations"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 2,
+        "title": "Cat Safety"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 2,
+        "title": "Cat Insurance"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 2,
+        "title": "Cat Emergency"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 3,
+        "title": "Cat Training"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 3,
+        "title": "Cat Psychology"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 3,
+        "title": "Cat Adoption"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 3,
+        "title": "Cat Donation"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 3,
+        "title": "Cat Grooming"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 3,
+        "title": "Cat Dental Care"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 3,
+        "title": "Cat Equipments"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 4,
+        "title": "Cat Coat Type"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 4,
+        "title": "Cat Playfulness"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 4,
+        "title": "Cat Age"
+    },
+    {
+        "user_id": 0,
+        "parent_id": 4,
+        "title": "Cat Shedding"
+    }
+]

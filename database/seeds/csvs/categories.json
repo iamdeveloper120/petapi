@@ -1,0 +1,37 @@
+[
+    {
+        "user_id": 0,
+        "title": "Food",
+        "name": "Food"
+    },
+    {
+        "user_id": 0,
+        "title": "Health",
+        "name": "Health"
+    },
+    {
+        "user_id": 0,
+        "title": "Care",
+        "name": "Care"
+    },
+    {
+        "user_id": 0,
+        "title": "Breeds",
+        "name": "Breeds"
+    },
+    {
+        "user_id": 0,
+        "title": "Reviews",
+        "name": "Reviews"
+    },
+    {
+        "user_id": 0,
+        "title": "News",
+        "name": "News"
+    },
+    {
+        "user_id": 0,
+        "title": "Brands",
+        "name": "Brands"
+    }
+]
